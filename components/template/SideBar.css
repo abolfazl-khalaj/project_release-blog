@@ -1,0 +1,25 @@
+/* App.css */
+
+/* Ensure the whole menu is RTL */
+.custom-rtl-menu .ant-menu {
+    direction: rtl;
+  }
+  
+  /* Ensure submenu opens to the left */
+  .ant-menu-submenu-popup {
+    right: 23% !important;
+    left: auto !important;
+  }
+  
+  /* Prevent horizontal scrolling */
+  .ant-menu-submenu-popup {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  /* Flip submenu arrow direction */
+  .ant-menu-submenu .ant-menu-submenu-title .ant-menu-submenu-arrow {
+    transform: rotate(180deg);
+  }
+  
