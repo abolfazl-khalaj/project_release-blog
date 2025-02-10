@@ -4,9 +4,9 @@
 #### پروژه درحال تویعه است و به زودی کامل آپلود میشود 
 
 
-<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/Screenshot%20(112).png' />
-<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/Screenshot%20(113).png' />
-<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/Screenshot%20(114).png' />
-<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/Screenshot%20(115).png' />
+<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/screenshotPage/Screenshot%20(112).png' />
+<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/screenshotPage/Screenshot%20(113).png' />
+<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/screenshotPage/Screenshot%20(114).png' />
+<img src='https://github.com/abolfazl-khalaj/project_release-blog/blob/main/screenshotPage/Screenshot%20(115).png' />
 
 ## ادامه دارد ...
