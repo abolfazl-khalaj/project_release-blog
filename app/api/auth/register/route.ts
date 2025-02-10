@@ -20,7 +20,8 @@ export async function POST(req:NextRequest):Promise<NextResponse>{
             job: Joi.string(),
             aboutMy : Joi.string().required(),
             email: Joi.string().email().required(),
-            password: Joi.string().min(8).required(),
+     
+       password: Joi.string().min(8).required(),
           });
 
         const {error} = schema.validate(body)
@@ -28,7 +29,6 @@ export async function POST(req:NextRequest):Promise<NextResponse>{
         if(error){
             return NextResponse.json({messageError : error.details[0].message},{status:402})
         }
-
         const token = await generateToken(body.email)
         const passwordHashed = await hashedPassword(body.password)
 
@@ -37,7 +37,6 @@ export async function POST(req:NextRequest):Promise<NextResponse>{
             token ,
             password:passwordHashed
         }
-        console.log(user);
         
 
         await UserModel.create(user)
