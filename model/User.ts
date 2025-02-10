@@ -17,9 +17,8 @@ export interface IUser extends Document {
 const SchemaUser = new Schema<IUser>({
     photo: {
         type: SchemaTypes.String,
-        minLength: 3,
         required: true, 
-    },
+},
     name: {
         type: SchemaTypes.String, 
         required: true, 
@@ -32,13 +31,13 @@ const SchemaUser = new Schema<IUser>({
     email: {
         type: SchemaTypes.String,
         match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        required: false,
+        required: true,
         unique: true
     },
     password: {
         type: SchemaTypes.String,
         min: 8,
-        required: false
+        required: true
     },
     aboutMy: {
         type: SchemaTypes.String,
