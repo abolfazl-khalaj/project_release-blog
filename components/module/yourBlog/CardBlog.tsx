@@ -6,13 +6,16 @@ export default function CardBlog() {
     return (
         <div className="w-[32%] h-96 p-4 border border-gray-700 rounded-lg shadow-lg bg-gray-100 text-gray-300 relative transition transform hover:scale-[1.01] hover:shadow-md">
             <div className="flex justify-between items-center">
-                <div className="flex items-center">
-                    <Link href={'/author/546746'}>
-                        <Image src={img} width={24} quality={100} height={24} alt="author-image" className="rounded-full cursor-pointer border border-gray-600" />
-                    </Link>
-                    <Link href={'/author/343545354'} className="text-xs ml-2 cursor-pointer hover:text-blue-500 text-gray-500 pr-1 transition">alireza hamom</Link>
-                </div>
-                <span className="text-sm text-gray-500">1404 / آبان / 12</span>
+            <div className="flex gap-1 items-center">
+                <Link href={'/author/546746'} className="w-8 h-8">
+                    <Image src={img} width={50} height={50} quality={100} alt="author-image" className="w-8 h-8 rounded-full cursor-pointer border border-gray-600" />
+                </Link>
+                <Link href={'/author/343545354'} className="text-xs mt-1 cursor-pointer hover:text-blue-500 text-gray-500">
+                    alireza hamom
+                </Link>
+            </div>
+
+            <span className="text-sm text-gray-500">1404 / آبان / 12</span>
             </div>
             <div className="mt-4 mb-2">
                 <h3 className="text-xl mb-2 text-gray-100 font-semibold">دیزاین پترن های وب</h3>

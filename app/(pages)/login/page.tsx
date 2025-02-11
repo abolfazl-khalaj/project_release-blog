@@ -37,15 +37,15 @@ export default function AuthForm() {
                                 <span className="text-gray-700">پروفایلتونو بذارید</span>
                                 <input type="file" className="hidden" />
                             </label>
-                            <input type="text" placeholder="نام کامل" className="p-2 border rounded-lg focus:ring-2 focus:ring-blue-400" required />
-                            <input type="text" placeholder="شغل" className="p-2 border rounded-lg focus:ring-2 focus:ring-blue-400" required />
+                            <input type="text" placeholder="نام کامل" className="p-2 border rounded-lg focus:ring-2 outline-blue-500" required />
+                            <input type="text" placeholder="شغل" className="p-2 border rounded-lg focus:ring-2 outline-blue-500" required />
                         </>
                     )}
-                    <input type="email" placeholder="ایمیل" className="p-2 border rounded-lg focus:ring-2 focus:ring-blue-400" required />
-                    <input type="password" placeholder="رمز عبور" className="p-2 border rounded-lg focus:ring-2 focus:ring-blue-400" required />
+                    <input type="email" placeholder="ایمیل" className="p-2 border rounded-lg focus:ring-2 outline-blue-500" required />
+                    <input type="password" placeholder="رمز عبور" className="p-2 border rounded-lg focus:ring-2 outline-blue-500" required />
                     {
                         !isLogin && 
-                        <textarea placeholder="درباره خودتان" className="p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 resize-none min-h-20" required></textarea>
+                        <textarea placeholder="درباره خودتان" className="p-2 border rounded-lg focus:ring-2 outline-blue-500 resize-none min-h-20" required></textarea>
                     }
                     <button type="submit" className="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-all">
                         {isLogin ? "ورود" : "ثبت نام"}

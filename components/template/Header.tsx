@@ -28,7 +28,7 @@ export default function Header() {
                         />
                         <BiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"   size={18}/>
                     </div>
-                    <Link href={'/login'} className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
+                    <Link href={'/my_account'} className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
                         ثبت نام / ورود
                     </Link>
                 </div>
