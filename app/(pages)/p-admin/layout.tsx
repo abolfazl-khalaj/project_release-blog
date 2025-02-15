@@ -7,10 +7,9 @@ export default function PanelAdminLayOut({
     children: React.ReactNode;
   }) {
     return (
-      <html lang="fr" dir="rtl">
-        <body>
+
           <div className="flex">
-            <aside className="w-1/4 bg-gray-200 p-4 min-h-screen">
+            <aside className="w-1/6 bg-gray-200 p-4">
                 <Aside/>
             </aside>
   
@@ -18,8 +17,7 @@ export default function PanelAdminLayOut({
               {children}
             </main>
           </div>
-        </body>
-      </html>
+
     );
   }
   
