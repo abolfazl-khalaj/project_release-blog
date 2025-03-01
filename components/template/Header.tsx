@@ -12,8 +12,8 @@ export default function Header() {
         {
             !isDashboard ?
             (
-                <div className="border-b shadow-sm bg-white">
-                    <div className="flex justify-between items-center w-10/12 my-5 mx-auto">
+                <div className="flex justify-center border-b shadow-md bg-white h-20 w-full ">
+                    <div className=" w-10/12 h-full mx-auto flex justify-between items-center ">
                         <nav className="flex gap-x-6 text-lg ">
         
                             <Link href={'/blog'} className={`${pathname === '/blog' ? 'text-blue-600':'text-gray-800'} hover:text-gray-500 transition`}>فرآورده</Link>
@@ -41,7 +41,7 @@ export default function Header() {
                 </div>
             ):(
                 <div>
-                    
+
                 </div>
             )
         }

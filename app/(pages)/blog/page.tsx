@@ -5,7 +5,7 @@ import SideBar from "@/components/template/SideBar";
 
 export default function Blog(){
     return (
-        <div className="w-11/12 m-auto mt-8 flex justify-between">
+        <div className="w-11/12 m-auto mt-24 flex justify-between">
             <div className="w-1/3 ">
                 <SideBar/>
             </div>

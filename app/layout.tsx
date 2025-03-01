@@ -17,10 +17,17 @@ export default function RootLayout({
     <html lang="fr" dir="rtl">
       <body
       >
-        <header>
-          <Header/>
-        </header>
-        {children}
+        <div className="flex">
+
+          <header className="fixed top-0 left-0 right-0 z-10">
+            <Header/>
+          </header>
+          <div className="flex-1">
+            {children}
+
+          </div>
+
+        </div>
       </body>
     </html>
   );

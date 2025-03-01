@@ -24,7 +24,7 @@ export default function MyAccount() {
     ]);
 
     return (
-        <div className="w-11/12 min-h-96 bg-white shadow-lg my-10 mx-auto p-6 rounded-lg">
+        <div className="w-11/12 min-h-96 bg-white shadow-lg my-24 mx-auto p-6 rounded-lg">
             <div className="mb-6 text-2xl ">
                 <span>
                     ابوالفضل جان به پنل کاربر بلاگ خوش اومدی ❤️
@@ -65,10 +65,7 @@ export default function MyAccount() {
                 )}
 
                 {activeTab === "newArticle" && (
-                    <div>
-                        <h2 className="text-xl font-bold">ساخت مقاله</h2>
-                        <p className="text-gray-600 mt-2">در این بخش می‌توانید مقاله جدید ایجاد کنید.</p>
-                    </div>
+
                 )}
             </div>
         </div>

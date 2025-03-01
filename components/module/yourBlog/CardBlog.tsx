@@ -2,23 +2,32 @@ import Image from "next/image";
 import Link from "next/link";
 import img from '../../../public/images.jpg'
 
-export default function CardBlog() {
-    return (
-        <div className="w-[32%] h-96 p-4 border border-gray-700 rounded-lg shadow-lg bg-gray-100 text-gray-300 relative transition transform hover:scale-[1.01] hover:shadow-md">
-            <div className="flex justify-between items-center">
-            <div className="flex gap-1 items-center">
-                <Link href={'/author/546746'} className="w-8 h-8">
-                    <Image src={img} width={50} height={50} quality={100} alt="author-image" className="w-8 h-8 rounded-full cursor-pointer border border-gray-600" />
-                </Link>
-                <Link href={'/author/343545354'} className="text-xs mt-1 cursor-pointer hover:text-blue-500 text-gray-500">
-                    alireza hamom
-                </Link>
-            </div>
+interface CardBlogProps {
+    auth? : string
+}
 
-            <span className="text-sm text-gray-500">1404 / آبان / 12</span>
+export default function CardBlog(props:CardBlogProps) {
+    return (
+        <div className="w-[32%] h-96 p-4 border border-gray-700 rounded-lg shadow-lg bg-gray-100 text-gray-300 relative transition transform hover:shadow-md">
+            <div className={`flex  items-center ${props.auth !== 'admin' ? 'justify-between' : 'justify-end'}`}>
+                {
+                    props.auth !== 'admin' && (
+                        <div className="flex gap-1 items-center">
+                            <Link href={'/author/546746'} className="w-8 h-8">
+                                <Image src={img} width={50} height={50} quality={100} alt="author-image" className="w-8 h-8 rounded-full cursor-pointer border border-gray-600" />
+                            </Link>
+                            <Link href={'/author/343545354'} className="text-xs mt-1 cursor-pointer hover:text-blue-500 text-gray-500">
+                                alireza hamom
+                            </Link>
+                        </div>
+                    )
+                }
+
+
+                <span className="text-sm text-gray-500">1404 / آبان / 12</span>
             </div>
-            <div className="mt-4 mb-2">
-                <h3 className="text-xl mb-2 text-gray-100 font-semibold">دیزاین پترن های وب</h3>
+            <div className="mt-3 mb-2">
+                <h3 className="text-xl mb-2 text-gray-600 font-semibold">دیزاین پترن های وب</h3>
                 <p className="text-gray-700 line-clamp-4 leading-relaxed">
                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است...
                 </p>

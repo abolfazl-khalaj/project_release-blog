@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="h-screen w-1/2 m-auto flex items-center justify-center flex-col gap-y-6">        
+    <div className="w-1/2 mt-[17%] m-auto flex items-center justify-center flex-col gap-y-6">        
       <div className="text-center w-full">
         <h1 className="text-2xl mb-4">
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با اس       </h1>

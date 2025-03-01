@@ -17,13 +17,13 @@ export default function Aside() {
     const pathname = usePathname();
 
     return (
-        <div className="relative min-h-screen">
+        <div>
             <ul className="space-y-3">
                 {links.map((link) => (
                     <li key={link.href}>
                         <Link
                             href={link.href}
-                            className={`block p-2 text-white rounded ${pathname === link.href ? 'bg-blue-500' : 'bg-gray-300 text-black'}`}
+                            className={`block p-2 rounded ${pathname === link.href ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}
                         >
                             {link.name}
                         </Link>

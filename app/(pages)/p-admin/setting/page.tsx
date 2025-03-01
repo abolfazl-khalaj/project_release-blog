@@ -5,9 +5,9 @@ import DataEditFromPanelAdmin from "@/components/template/p-admin/setting/DataEd
 import { useState } from "react";
 
 export default function Setting() {
-    const [activeMainTab, setActiveMainTab] = useState("details"); // تب اصلی
-    const [activeSubTab, setActiveSubTab] = useState("title"); // تب‌های داخلی جزئیات صفحه اصلی
-    const [activeContactTab, setActiveContactTab] = useState("intro"); // تب‌های داخلی ارتباط با ما
+    const [activeMainTab, setActiveMainTab] = useState("details")
+    const [activeSubTab, setActiveSubTab] = useState("title");
+    const [activeContactTab, setActiveContactTab] = useState("intro");
 
     return (
         <div className="w-11/12 min-h-96 bg-white shadow-lg mt-10 mx-auto p-6 rounded-lg">
@@ -18,6 +18,7 @@ export default function Setting() {
                     { id: "rules", title: "قوانین" },
                     { id: "contact", title: "ارتباط با ما" },
                     { id: "notification", title: " نوتفیکیشن به کاربران" },
+                    { id: "category", title: " دسته بندی" },
                 ].map((tab) => (
                     <button
                         key={tab.id}
@@ -135,6 +136,44 @@ export default function Setting() {
                                 data="خیابان امام"
                                 placeholder={'ادرس جدید صفحه را اینجا وارد کنید'}/>
                             }
+                        </div>
+                    </div>
+                )}
+
+                {activeMainTab === "category" && (
+                    <div>
+                        <h2 className="text-xl font-bold">ارتباط با ما</h2>
+                        {/* تب‌های داخلی ارتباط با ما */}
+                        <div className="flex border-b mt-4">
+                            {[
+                                { id: "categories-ticket", title: "دسته های تیکت" },
+                                { id: "categories-blog", title: "دسته های مقاله" },
+
+                            ].map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveSubTab(tab.id)}
+                                    className={`flex-1 py-2 text-center text-lg font-semibold transition ${
+                                        activeSubTab === tab.id
+                                            ? "border-b-4 border-red-500 text-red-500"
+                                            : "text-gray-500 hover:text-red-500"
+                                    }`}
+                                >
+                                    {tab.title}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="mt-4">
+                        {activeSubTab === "categories-ticket" &&                                 
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus accusamus autem necessitatibus velit alias? Explicabo amet excepturi sit eligendi, labore obcaecati quis soluta nemo veritatis illum cumque tempora fugit nihil!
+                        </div>
+                        }
+                        {activeSubTab === "categories-blog" && 
+                            <div>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste commodi nisi reiciendis dolorem laudantium voluptas porro facere harum. Facilis vel libero omnis maiores quo dolores porro tenetur quam eveniet dignissimos?
+                            </div>
+                        }
                         </div>
                     </div>
                 )}
