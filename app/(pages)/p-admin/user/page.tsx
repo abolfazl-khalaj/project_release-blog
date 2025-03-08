@@ -1,9 +1,10 @@
 'use client'
 import UserPanelAdmin from '@/components/module/p-admin/User';
+import UserModel from '@/model/User';
 import { useState } from 'react';
 
 export interface User {
-    id: number;
+    id: string;
     avatar: string;
     name: string;
     job: string;
@@ -17,7 +18,7 @@ export interface User {
 export default function UsersList() {
     const [users, setUsers] = useState<User[]>([
         {
-            id: 1,
+            id: '1',
             avatar: 'https://via.placeholder.com/50',
             name: 'علی رضایی',
             job: 'نویسنده',
@@ -28,7 +29,7 @@ export default function UsersList() {
             articles: ['مقاله 1', 'مقاله 2', 'مقاله 3', 'مقاله 4', 'مقاله 5']
         },
         {
-            id: 2,
+            id: '2',
             avatar: 'https://via.placeholder.com/50',
             name: 'زهرا محمدی',
             job: 'روزنامه‌نگار',
@@ -52,13 +53,13 @@ export default function UsersList() {
         setModalType(null);
     };
 
-    const resetUser = (id: number) => {
-        console.log(`ریست کاربر با id ${id} انجام شد`);
-        // منطق ریست کاربر اینجا اضافه شود
-    };
-    const banUser = (id: number) => {
+    const resetUser = async (id: string) => {
         console.log(id);
         
+    };
+
+    const banUser = (id: string) => {
+         
     }
 
     return (

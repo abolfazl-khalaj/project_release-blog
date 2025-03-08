@@ -3,14 +3,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-    {id:Math.floor(Math.random()), name: 'صفحه اصلی', href: '/p-admin' },
-    {id:Math.floor(Math.random()), name: 'کاربران', href: '/p-admin/user' },
-    {id:Math.floor(Math.random()), name: 'پیغامات', href: '/p-admin/contact' },
-    {id:Math.floor(Math.random()), name: 'تیکت ها', href: '/p-admin/ticket' },
-    {id:Math.floor(Math.random()), name: 'درخواست های انتشار مقاله', href: '/p-admin/req-blog' },
-    {id:Math.floor(Math.random()), name: 'مقالات ما', href: '/p-admin/article' },
-    {id:Math.floor(Math.random()), name: 'ساخت مقاله', href: '/p-admin/new-article' },
-    {id:Math.floor(Math.random()), name: 'تنظیمات', href: '/p-admin/setting' }
+    {name: 'صفحه اصلی', href: '/p-admin' },
+    {name: 'کاربران', href: '/p-admin/user' },
+    {name: 'پیغامات', href: '/p-admin/contact' },
+    {name: 'تیکت ها', href: '/p-admin/ticket' },
+    {name: 'درخواست های انتشار مقاله', href: '/p-admin/req-blog' },
+    {name: 'مقالات ما', href: '/p-admin/article' },
+    {name: 'ساخت مقاله', href: '/p-admin/new-article' },
+    {name: 'تنظیمات', href: '/p-admin/setting' }
 ];
 
 export default function Aside() {

@@ -3,7 +3,7 @@ import { Ticket } from "@/app/(pages)/p-admin/ticket/page"
 interface TicketProps{
     ticket: Ticket,
     openModal: (ticket: Ticket, type: 'view' | 'reply')=>void ,
-    deleteTicket: (id: number)=>void,
+    deleteTicket: (id: string)=>void,
     banUser: (email:string)=>void,
 }
 

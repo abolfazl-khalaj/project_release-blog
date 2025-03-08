@@ -3,7 +3,7 @@ import TicketPanelAdmin from '@/components/module/p-admin/Ticket';
 import { useState } from 'react';
 
 export interface Ticket {
-    id: number;
+    id: string;
     name: string;
     job: string;
     email: string;
@@ -16,7 +16,7 @@ export interface Ticket {
 export default function TicketsList() {
     const [tickets, setTickets] = useState<Ticket[]>([
         {
-            id: 1,
+            id: '1',
             name: 'علی رضایی',
             job: 'پشتیبان فنی',
             email: 'ali@example.com',
@@ -26,7 +26,7 @@ export default function TicketsList() {
             description: 'من نمی‌توانم وارد حساب کاربری خود شوم. لطفاً راهنمایی کنید.'
         },
         {
-            id: 2,
+            id: '2',
             name: 'زهرا محمدی',
             job: 'مدیر مالی',
             date: '1500/4/6',
@@ -53,8 +53,9 @@ export default function TicketsList() {
         setReplyMessage('');
     };
 
-    const deleteTicket = (id: number) => {
-        setTickets(tickets.filter(ticket => ticket.id !== id));
+    const deleteTicket = (id: string) => {
+        console.log(id);
+        
     };
 
     const banUser = (email: string) => {

@@ -3,6 +3,7 @@ import UpdateDataMePanelUser from "@/components/template/p-user/DataMe";
 import UpdateDataMe from "@/components/template/p-user/DataMe";
 import ArticlesPanelUser from "@/components/template/p-user/ListArticles";
 import TicketsPanelUser from "@/components/template/p-user/MsgTickets";
+import NewArticlePanelUser from "@/components/template/p-user/NewArticle";
 import SendTicketPanelUser from "@/components/template/p-user/NewTicket";
 import Link from "next/link";
 import { useState } from "react";
@@ -65,7 +66,7 @@ export default function MyAccount() {
                 )}
 
                 {activeTab === "newArticle" && (
-
+                    <NewArticlePanelUser/>
                 )}
             </div>
         </div>

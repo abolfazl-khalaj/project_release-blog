@@ -1,5 +1,7 @@
 'use client'
 
+import CategoryBlogPanelAdmin from "@/components/template/p-admin/setting/CategoryBlog";
+import CategoryTicketPanelAdmin from "@/components/template/p-admin/setting/CategoryTicket";
 import DataEditFromPanelAdmin from "@/components/template/p-admin/setting/DataEditForm";
 
 import { useState } from "react";
@@ -8,6 +10,8 @@ export default function Setting() {
     const [activeMainTab, setActiveMainTab] = useState("details")
     const [activeSubTab, setActiveSubTab] = useState("title");
     const [activeContactTab, setActiveContactTab] = useState("intro");
+
+
 
     return (
         <div className="w-11/12 min-h-96 bg-white shadow-lg mt-10 mx-auto p-6 rounded-lg">
@@ -164,15 +168,11 @@ export default function Setting() {
                             ))}
                         </div>
                         <div className="mt-4">
-                        {activeSubTab === "categories-ticket" &&                                 
-                        <div>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus accusamus autem necessitatibus velit alias? Explicabo amet excepturi sit eligendi, labore obcaecati quis soluta nemo veritatis illum cumque tempora fugit nihil!
-                        </div>
+                        {activeSubTab === "categories-ticket" && 
+                            <CategoryTicketPanelAdmin/>                                
                         }
                         {activeSubTab === "categories-blog" && 
-                            <div>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste commodi nisi reiciendis dolorem laudantium voluptas porro facere harum. Facilis vel libero omnis maiores quo dolores porro tenetur quam eveniet dignissimos?
-                            </div>
+                            <CategoryBlogPanelAdmin/>
                         }
                         </div>
                     </div>

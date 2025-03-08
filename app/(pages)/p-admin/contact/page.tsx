@@ -1,8 +1,9 @@
 'use client'
 import ContactPanelAdmin from '@/components/module/p-admin/Contact';
+import ContactModel from '@/model/Contact';
 import { useState } from 'react';
 export interface Message {
-    id: number;
+    id: string;
     email?: string;
     title: string;
     description: string;
@@ -10,16 +11,14 @@ export interface Message {
 
 export default function Contact() {
     const [messages, setMessages] = useState<Message[]>([
-        { id: 1, email: 'example1@example.com', title: 'پیغام اول', description: 'توضیحات پیغام اول' },
-        { id: 2, email: 'example2@example.com', title: 'پیغام دوم', description: 'توضیحات پیغام دوم' },
-        { id: 3, title: 'پیغام سوم', description: 'توضیحات پیغام سوم' },
+        { id: 'zx1', email: 'example1@example.com', title: 'پیغام اول', description: 'توضیحات پیغام اول' },
+        { id: '2s', email: 'example2@example.com', title: 'پیغام دوم', description: 'توضیحات پیغام دوم' },
+        { id: '3f', title: 'پیغام سوم', description: 'توضیحات پیغام سوم' },
     ]);
     const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-    const deleteMessage = (id: number) => {
-        setMessages(messages.filter(message => message.id !== id));
-    };
+
 
     const openModal = (message: Message) => {
         setSelectedMessage(message);
@@ -30,9 +29,10 @@ export default function Contact() {
         setIsModalOpen(false);
     };
 
-    const markAsRead = (id: number) => {
-        console.log(`پیغام با id ${id} به عنوان دیده شده علامت‌گذاری شد`);
-        // منطق برای علامت‌گذاری به عنوان دیده شده
+    const markAsRead = async (id: string) => {
+    //   await ContactModel.findByIdAndDelete(id)
+    console.log(id);
+    
     };
 
     return (
@@ -47,23 +47,22 @@ export default function Contact() {
                             <th className="px-4 py-2  text-gray-600">عنوان</th>
                             <th className="px-4 py-2  text-gray-600">توضیحات</th>
                             <th className="px-4 py-2  text-gray-600">عملیات</th>
-                            <th className="px-4 py-2  text-gray-600">عملیات</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         {messages.map((message) => (
                             <ContactPanelAdmin 
                             key={message.id}
                             message={message} 
-                            deleteMessage={deleteMessage} 
                             markAsRead={markAsRead} 
                             openModal={openModal}/>
                         ))}
+                        
                     </tbody>
                 </table>
             </div>
 
-            {/* مدال نمایش توضیحات */}
             {isModalOpen && selectedMessage && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">

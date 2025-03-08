@@ -2,9 +2,9 @@ import { User } from "@/app/(pages)/p-admin/user/page"
 
 interface UserProps {
     user: User ,
-    openModal:(user:User,type:'about'|'articles')=>void ,
-    resetUser:(id:number)=>void ,
-    banUser:(id:number)=>void ,
+    openModal:(user:User,type:'about'|'articles') => void ,
+    resetUser:(id:string)=>void ,
+    banUser:(id:string)=>void ,
 }
 
 export default function UserPanelAdmin({user, openModal,resetUser ,banUser}:UserProps){

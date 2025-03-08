@@ -1,12 +1,25 @@
 'use client'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
 export default function Header() {
     const pathname = usePathname();
     const isDashboard = pathname.startsWith("/p-admin")
+    const router = useRouter()
+    const [valueSearch , setValueSearch] = useState<string>('')
 
+    const searchingBlog = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if(event.code === 'Enter'){
+            redirectSearching()
+        }
+    };
+    const redirectSearching = () => {
+        router.push(`/search?query=${valueSearch}`)
+    }
+    
     return (
         <>
         {
@@ -30,8 +43,11 @@ export default function Header() {
                                     type="text" 
                                     placeholder="جستجوی مقاله..." 
                                     className="pl-10 pr-4 py-2 border rounded-full focus:ring-2 focus:ring-gray-400 outline-none transition"
+                                    onChange={(e)=>setValueSearch(e.target.value)}
+                                    onKeyDown={searchingBlog}
                                 />
-                                <BiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"   size={18}/>
+                                <BiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer hover:text-blue-500"   size={18} 
+                                onClick={redirectSearching}/>
                             </div>
                             <Link href={'/my_account'} className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
                                 ثبت نام / ورود
